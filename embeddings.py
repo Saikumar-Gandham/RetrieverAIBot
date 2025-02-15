@@ -7,7 +7,7 @@
 from langchain_chroma import Chroma
 # from langchain_openai import OpenAIEmbeddings
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain_openai import OpenAI
+# from langchain_openai import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import pandas as pd
 from dotenv import load_dotenv
@@ -16,7 +16,7 @@ import os
 # Load the .env file
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("openai_api_key")
+# OPENAI_API_KEY = os.getenv("openai_api_key")
 
 
 # Reading the CSV files into pandas DataFrames
