@@ -5,7 +5,8 @@
 
 
 from langchain_chroma import Chroma
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_openai import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import pandas as pd
@@ -29,7 +30,9 @@ data["Text"] = data["Text"].fillna("").astype(str)
 
 # Initialize text splitter and embedding model
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+# embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002")
+embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+
 
 # Initialize Chroma with persistence
 persist_directory = "chroma_store"
